@@ -9,8 +9,7 @@
 void Matrix::update_span(std::size_t ind) {
   std::pair<std::size_t, std::size_t> sp = span[ind];
   std::size_t block_l = (sp.first == -1 ? 0 : sp.first) / Matrix::BLOCK_SIZE;
-  std::size_t block_r =
-      BLOCK_NUM((sp.second == -1 ? matrix[0].size() - 1 : sp.second));
+  std::size_t block_r = BLOCK_NUM((sp.second == -1 ? matrix[0].size() - 1 : sp.second));
 
   bool found = false;
   for (std::size_t i = block_l; !found && i <= block_r; i++) {
