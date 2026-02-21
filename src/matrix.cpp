@@ -6,10 +6,6 @@
 
 #include "matrix.hpp"
 
-std::size_t BLOCK_NUM(std::size_t n) {
-  return (n / (Matrix::BLOCK_SIZE - 1)) / Matrix::BLOCK_SIZE;
-}
-
 void Matrix::update_span(std::size_t ind) {
   std::pair<std::size_t, std::size_t> sp = span[ind];
   std::size_t block_l = (sp.first == -1 ? 0 : sp.first) / Matrix::BLOCK_SIZE;

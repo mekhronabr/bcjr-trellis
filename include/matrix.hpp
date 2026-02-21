@@ -7,6 +7,9 @@
 #include <utility>
 #include <vector>
 
+#define BLOCK_NUM(n) (n / (Matrix::BLOCK_SIZE - 1)) / Matrix::BLOCK_SIZE
+
+
 class Matrix {
 public:
   static constexpr inline std::size_t BLOCK_SIZE = 64;
